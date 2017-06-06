@@ -20,10 +20,10 @@ class ViewController: NSViewController {
         let myPopup: NSAlert = NSAlert()
         myPopup.messageText = title
         myPopup.informativeText = text
-        myPopup.alertStyle = NSAlertStyle.warning
+        myPopup.alertStyle = NSAlert.Style.warning
         myPopup.addButton(withTitle: "Continue")
         myPopup.addButton(withTitle: "Cancel")
-        return myPopup.runModal() == NSAlertFirstButtonReturn
+        return myPopup.runModal() == NSApplication.ModalResponse.alertFirstButtonReturn
     }
     
     func getFiles(message: String) -> [URL] {
@@ -36,7 +36,7 @@ class ViewController: NSViewController {
         dialog.canCreateDirectories = false
         dialog.allowsMultipleSelection = true
         
-        if (dialog.runModal() == NSModalResponseOK) {
+        if (dialog.runModal() == NSApplication.ModalResponse.OK) {
             return dialog.urls
         } else {
             return []
