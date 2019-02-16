@@ -14,6 +14,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		668188BA22187D7C00970BD8 /* iCloud Manager.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "iCloud Manager.entitlements"; sourceTree = "<group>"; };
 		66CE07F71E95B0B800EA2197 /* iCloud Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iCloud Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		66CE07FA1E95B0B800EA2197 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		66CE07FC1E95B0B800EA2197 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -52,6 +53,7 @@
 		66CE07F91E95B0B800EA2197 /* iCloud Manager */ = {
 			isa = PBXGroup;
 			children = (
+				668188BA22187D7C00970BD8 /* iCloud Manager.entitlements */,
 				66CE07FA1E95B0B800EA2197 /* AppDelegate.swift */,
 				66CE07FC1E95B0B800EA2197 /* ViewController.swift */,
 				66CE07FE1E95B0B800EA2197 /* Assets.xcassets */,
@@ -96,6 +98,14 @@
 						DevelopmentTeam = 39QG79F7FD;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.HardenedRuntime = {
+								enabled = 1;
+							};
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -265,9 +275,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "iCloud Manager/iCloud Manager.entitlements";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 39QG79F7FD;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "iCloud Manager/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ezekielelin.iCloud-Manager";
@@ -282,9 +294,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "iCloud Manager/iCloud Manager.entitlements";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 39QG79F7FD;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "iCloud Manager/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ezekielelin.iCloud-Manager";
