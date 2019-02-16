@@ -46,8 +46,13 @@ class ViewController: NSViewController {
     @IBAction func removeLocal(sender: Any?) {
         let results = getFiles(message: "Choose files to purge...")
         for url in results {
+            print(url)
             do {
-                try FileManager.default.evictUbiquitousItem(at: url)
+                if FileManager.default.isUbiquitousItem(at: url) {
+                    try FileManager.default.evictUbiquitousItem(at: url)
+                } else if !dialogOKCancel(title: "Error", text: "Item is not a cloud file \(url)") {
+                    break
+                }
             } catch {
                 if !dialogOKCancel(title: "Error", text: "Unable to purge \(url)") {
                     break
